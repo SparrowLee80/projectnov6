@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+      <h2>FILES</h2>
+
+      <p>
+        <a href="{% url "upload_file" %}" class="btn btn-primary">Upload File</a>
+      </p>
+      <table class="table mb-0">
+        <thead>
+            <tr>
+                <th>Cover</th>
+                <th>Title</th>
+                <th>Download</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for files in fileall%}
+            <tr>
+                <td>
+                    {% if files.cover %}
+                    <img src="{{ files.cover.url }}" alt="{{ files.title }}" style="width:100px;">
+                    {% else %}
+                    <span class="text-muted">No Cover</span>
+                    {% endif%}
+                </td>
+                <td>{{ files.title }}</td>
+                <td>
+                    <a href="{{ files.data.url }}" class="btn btn-primary btn-sm" target="_blank">Download File </a>
+                </td>
+                <td>
+                    <form method="POST" action="{% url 'delete_file' files.pk %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    
+        <script src="" async defer></script>
+    </body>
+</html>

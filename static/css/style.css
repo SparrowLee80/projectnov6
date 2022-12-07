@@ -1,0 +1,41 @@
+h3 {
+    color:red;
+    outline: 5px solid blue;
+    background-color: black;
+    padding-bottom: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 50px;
+    border: 2px dotted blue;
+    margin: 40px 70px 100px;
+    text-align: center;
+    font-size: 50px;
+}
+
+button {
+
+    align-items: center;
+    background-color: red;
+    color: black;
+    padding: 20px;
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.btnupload{
+    background-color: blueviolet;
+    outline: 5em black dashed;
+    color: white;
+    
+}
+
+.btnupload :hover {
+    background-color: orange;
+
+
+}
+
+.btnupload ::shadow{
+    color: gray;
+}
