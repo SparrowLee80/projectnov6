@@ -8,7 +8,12 @@ class Files(models.Model):
 
     def __str__(self):
         return self.title
+    def delete(self, *args, **kwargs):
+        self.data.delete()
+        self.cover.delete()
+        super().delete(*args, **kwargs)
 
+        
 class file_upload(models.Model):
     ids = models.AutoField(primary_key=True)
     file_name = models.CharField(max_length=255)
@@ -17,10 +22,7 @@ class file_upload(models.Model):
     def __str__(self):
         return self.file_name 
     
-    def delete(self, *args, **kwargs):
-        self.data.delete()
-        self.cover.delete()
-        super().delete(*args, **kwargs)
+
 
 
     # fileall = Files.objects.all()
