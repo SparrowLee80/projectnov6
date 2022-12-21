@@ -31,9 +31,9 @@ EMAIL_PORT = EMAIL_PORT
 SECRET_KEY = "django-insecure-dft3qe!(q@=0-gvm(leg1d+eir$me-tg!q*(il))#$%6y18x*2"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -61,6 +61,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "projectnov6.urls"
+SECURE_SSL_REDIRECT = True
 
 TEMPLATES = [
     {
