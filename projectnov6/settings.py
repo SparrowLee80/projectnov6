@@ -61,7 +61,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "projectnov6.urls"
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = False
 
 TEMPLATES = [
     {
